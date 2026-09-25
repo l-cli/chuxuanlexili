@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://chuxuanlexili.github.io/sitemap.xml
+Sitemap: https://l-cli.github.io/chuxuanlexili/sitemap.xml
