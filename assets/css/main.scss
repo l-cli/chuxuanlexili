@@ -123,7 +123,7 @@ h2,
 .news h2,
 .year,
 #contact-address h4 {
-  background: linear-gradient(120deg, #0d9488 0%, #0284c7 100%) !important;
+  background: linear-gradient(120deg, #0d9488 0%, #0284c7 60%, #2563eb 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   background-clip: text !important;
@@ -141,7 +141,7 @@ html[data-theme="dark"] .publications h2,
 html[data-theme="dark"] .news h2,
 html[data-theme="dark"] .year,
 html[data-theme="dark"] #contact-address h4 {
-  background: linear-gradient(120deg, #14b8a6 0%, #38bdf8 100%) !important;
+  background: linear-gradient(120deg, #14b8a6 0%, #38bdf8 60%, #60a5fa 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   background-clip: text !important;
@@ -151,7 +151,7 @@ html[data-theme="dark"] #contact-address h4 {
 /* Subtitle and Links with Gradient */
 .post-header .desc,
 .post-header .desc a {
-  background: linear-gradient(120deg, #0d9488 0%, #0284c7 100%) !important;
+  background: linear-gradient(120deg, #0d9488 0%, #0284c7 60%, #2563eb 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   background-clip: text !important;
@@ -163,7 +163,7 @@ html[data-theme="dark"] #contact-address h4 {
 
 html[data-theme="dark"] .post-header .desc,
 html[data-theme="dark"] .post-header .desc a {
-  background: linear-gradient(120deg, #14b8a6 0%, #38bdf8 100%) !important;
+  background: linear-gradient(120deg, #14b8a6 0%, #38bdf8 60%, #60a5fa 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   background-clip: text !important;
@@ -173,7 +173,7 @@ html[data-theme="dark"] .post-header .desc a {
 .intro-links a,
 .gradient-link,
 a.gradient-link {
-  background: linear-gradient(120deg, #0d9488 0%, #0284c7 100%) !important;
+  background: linear-gradient(120deg, #0d9488 0%, #0284c7 60%, #2563eb 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   background-clip: text !important;
@@ -304,8 +304,18 @@ a {
     min-width: 0;
 
     .post-header {
-      margin-bottom: 0.25rem !important;
+      float: none !important;
+      width: 100% !important;
+      display: block !important;
+      clear: both !important;
+      margin-bottom: 0.5rem !important;
       padding-bottom: 0 !important;
+    }
+
+    #hero-intro-section {
+      display: block !important;
+      clear: both !important;
+      width: 100% !important;
     }
   }
 
@@ -335,11 +345,11 @@ a {
 
 /* Fallback profile photo alignment when script has not run */
 @media (min-width: 576px) {
-  .post-header {
+  .post:not(:has(#header-profile-row)) .post-header {
     width: calc(100% - 250px);
     float: left;
   }
-  .post article:not(:has(#header-profile-row)) .profile {
+  .post:not(:has(#header-profile-row)) article .profile {
     float: right !important;
     width: 230px !important;
     margin-top: -5.75rem !important;
@@ -355,7 +365,7 @@ a {
   border-top: 1px solid var(--global-divider-color, #e2e8f0);
 
   h4 {
-    background: linear-gradient(120deg, #0d9488 0%, #0284c7 100%) !important;
+    background: linear-gradient(120deg, #0d9488 0%, #0284c7 60%, #2563eb 100%) !important;
     -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
     background-clip: text !important;
