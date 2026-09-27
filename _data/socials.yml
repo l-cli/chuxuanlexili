@@ -5,6 +5,6 @@ cv_pdf: /assets/pdf/cv.pdf # path to your CV PDF file
 email: lexi.li@pennmedicine.upenn.edu # your email address
 #inspirehep_id: 1010907 # Inspire HEP author ID
 #rss_icon: true # comment this line to hide the RSS icon
-#scholar_userid: # your Google Scholar ID (e.g. QC6cjaMAAAAJ from profile URL)
+scholar_userid: 6FHpDjAAAAAJ
 github_username: l-cli
 linkedin_username: chuxuan-li

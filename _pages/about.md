@@ -2,19 +2,15 @@
 layout: about
 title: About
 permalink: /
-subtitle: <a href='#'>University of Pennsylvania</a>
+subtitle: <a href="#">University of Pennsylvania</a>
 
 profile:
   align: right
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
-  more_info: >
-    <p>Department of Biostatistics, Epidemiology, and Informatics</p>
-    <p>3600 Civic Center Blvd</p>
-    <p>Philadelphia, PA 19104</p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true # includes social icons at the bottom of the page
+social: false # disable default icon glyph bar
 
 announcements:
   enabled: true # includes a list of news items
@@ -27,68 +23,57 @@ latest_posts:
   limit: 3
 ---
 
-Staying on the wavefront of the AI generation for better medicine.
+Staying on the wavefront of AI for better medicine.
 
-<style>
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+<div class="intro-links" style="margin: 1.25rem 0 1.75rem 0; line-height: 1.85;">
+  <div><strong>Curriculum Vitae:</strong> <a href="{{ '/assets/pdf/cv.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer">Download CV (PDF)</a></div>
+  <div><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/chuxuan-li" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/chuxuan-li</a></div>
+  <div><strong>GitHub:</strong> <a href="https://github.com/l-cli" target="_blank" rel="noopener noreferrer">https://github.com/l-cli</a></div>
+  <div><strong>Google Scholar:</strong> <a href="https://scholar.google.com/citations?user=6FHpDjAAAAAJ" target="_blank" rel="noopener noreferrer">https://scholar.google.com/citations?user=6FHpDjAAAAAJ</a></div>
+</div>
 
-*, *::before, *::after {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-}
+<div id="contact-address">
+  <h4>Department of Biostatistics, Epidemiology, and Informatics</h4>
+  <p>3600 Civic Center Blvd</p>
+  <p>Philadelphia, PA 19104</p>
+  <p>Email: <a href="mailto:lexi.li@pennmedicine.upenn.edu">lexi.li@pennmedicine.upenn.edu</a></p>
+</div>
 
-:root {
-  --global-theme-color: #0d9488 !important;
-  --global-hover-color: #0284c7 !important;
-}
+<script>
+(function() {
+  function setupHomepageLayout() {
+    // 1. Align profile photo to the exact same vertical height as the name header
+    var header = document.querySelector(".post .post-header");
+    var profile = document.querySelector(".post article .profile");
+    if (header && profile && !document.getElementById("header-profile-row")) {
+      var row = document.createElement("div");
+      row.id = "header-profile-row";
+      header.parentNode.insertBefore(row, header);
 
-.navbar {
-  border-top: 3px solid #0d9488 !important;
-}
+      var leftCol = document.createElement("div");
+      leftCol.className = "header-profile-left";
+      leftCol.appendChild(header);
 
-.navbar-nav .nav-item.active > .nav-link {
-  color: #0d9488 !important;
-  font-weight: 600 !important;
-  border-bottom: 2px solid #0d9488 !important;
-}
+      var rightCol = document.createElement("div");
+      rightCol.className = "header-profile-right";
+      rightCol.appendChild(profile);
 
-.navbar-nav .nav-link,
-.navbar-brand,
-.post-header .post-title,
-h2,
-h2 a {
-  text-transform: capitalize !important;
-}
+      row.appendChild(leftCol);
+      row.appendChild(rightCol);
+    }
 
-h2,
-.post article h2,
-.post article h2 a {
-  color: #0d9488 !important;
-  font-weight: 700 !important;
-}
+    // 2. Move address to the bottom of the page after Selected Publications
+    var addr = document.getElementById("contact-address");
+    var article = document.querySelector(".post article");
+    if (addr && article) {
+      article.appendChild(addr);
+    }
+  }
 
-.post-header .post-title,
-.post-header .post-title span {
-  font-weight: 500 !important;
-  letter-spacing: -0.02em !important;
-}
-
-.badge,
-.abbr .badge {
-  background: linear-gradient(135deg, #0d9488, #0284c7) !important;
-  color: #ffffff !important;
-  font-weight: 600 !important;
-  padding: 0.35em 0.65em !important;
-  border-radius: 6px !important;
-}
-
-.btn.btn-sm {
-  border: 1px solid #0d9488 !important;
-  color: #0d9488 !important;
-  border-radius: 6px !important;
-}
-
-.btn.btn-sm:hover {
-  background: #0d9488 !important;
-  color: #ffffff !important;
-}
-</style>
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", setupHomepageLayout);
+  } else {
+    setupHomepageLayout();
+  }
+})();
+</script>
