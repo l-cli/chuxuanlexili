@@ -23,13 +23,15 @@ latest_posts:
   limit: 3
 ---
 
-Staying on the wavefront of AI for better medicine.
+<div id="hero-intro-section">
+  <p class="hero-tagline" style="margin: 0.75rem 0; font-size: 1.05rem; line-height: 1.5;">Staying on the wavefront of AI for better medicine.</p>
 
-<div class="intro-links" style="margin: 1.25rem 0 1.75rem 0; line-height: 1.85;">
-  <div><strong>Curriculum Vitae:</strong> <a href="{{ '/assets/pdf/cv.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer">Download CV (PDF)</a></div>
-  <div><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/chuxuan-li" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/chuxuan-li</a></div>
-  <div><strong>GitHub:</strong> <a href="https://github.com/l-cli" target="_blank" rel="noopener noreferrer">https://github.com/l-cli</a></div>
-  <div><strong>Google Scholar:</strong> <a href="https://scholar.google.com/citations?user=6FHpDjAAAAAJ" target="_blank" rel="noopener noreferrer">https://scholar.google.com/citations?user=6FHpDjAAAAAJ</a></div>
+  <div class="intro-links" style="margin: 0.5rem 0 1.25rem 0; line-height: 1.9;">
+    <div><strong>Curriculum Vitae:</strong> <a class="gradient-link" href="{{ '/assets/pdf/cv.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer">Download CV (PDF)</a></div>
+    <div><strong>LinkedIn:</strong> <a class="gradient-link" href="https://www.linkedin.com/in/chuxuan-li" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/chuxuan-li</a></div>
+    <div><strong>GitHub:</strong> <a class="gradient-link" href="https://github.com/l-cli" target="_blank" rel="noopener noreferrer">https://github.com/l-cli</a></div>
+    <div><strong>Google Scholar:</strong> <a class="gradient-link" href="https://scholar.google.com/citations?user=6FHpDjAAAAAJ" target="_blank" rel="noopener noreferrer">https://scholar.google.com/citations?user=6FHpDjAAAAAJ</a></div>
+  </div>
 </div>
 
 <div id="contact-address">
@@ -42,9 +44,11 @@ Staying on the wavefront of AI for better medicine.
 <script>
 (function() {
   function setupHomepageLayout() {
-    // 1. Align profile photo to the exact same vertical height as the name header
     var header = document.querySelector(".post .post-header");
     var profile = document.querySelector(".post article .profile");
+    var introSection = document.getElementById("hero-intro-section");
+
+    // 1. Move intro text and links inside the left column under University of Pennsylvania
     if (header && profile && !document.getElementById("header-profile-row")) {
       var row = document.createElement("div");
       row.id = "header-profile-row";
@@ -54,12 +58,18 @@ Staying on the wavefront of AI for better medicine.
       leftCol.className = "header-profile-left";
       leftCol.appendChild(header);
 
+      if (introSection) {
+        leftCol.appendChild(introSection);
+      }
+
       var rightCol = document.createElement("div");
       rightCol.className = "header-profile-right";
       rightCol.appendChild(profile);
 
       row.appendChild(leftCol);
       row.appendChild(rightCol);
+    } else if (introSection && document.querySelector(".header-profile-left")) {
+      document.querySelector(".header-profile-left").appendChild(introSection);
     }
 
     // 2. Move address to the bottom of the page after Selected Publications
