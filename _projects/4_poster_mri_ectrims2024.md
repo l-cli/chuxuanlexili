@@ -1,9 +1,9 @@
 ---
 layout: page
 title: "7T MRI Reveals Changes in Normal Appearing White and Gray Matter Related to Development of Paramagnetic Rim Lesions"
-description: "Poster Presentation · 40th Congress of ECTRIMS 2024, Copenhagen, Denmark"
+description: "Poster Presentation · 40th Congress of ECTRIMS 2024 · Copenhagen, Denmark · September 18–20, 2024"
 importance: 3
-category: posters
+category: Posters
 ---
 
 ### Presentation Details
@@ -12,7 +12,6 @@ category: posters
 - **Conference**: 40th Congress of the European Committee for Treatment and Research in Multiple Sclerosis (ECTRIMS)
 - **Location**: Copenhagen, Denmark
 - **Date**: September 18–20, 2024
-- **Authors**: C. Li et al.
 
 ---
 

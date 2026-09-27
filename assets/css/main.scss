@@ -1,0 +1,176 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+/* Built-in Sass modules */
+@use "sass:math";
+@use "sass:string";
+
+@use "variables" with (
+  $max-content-width: {{ site.max_width | default:  "930px" }}
+);
+
+@use "themes";
+@use "layout";
+
+@use "typography";
+@use "navbar";
+@use "footer";
+@use "blog";
+@use "publications";
+@use "components";
+@use "utilities";
+
+@use "tabs";
+@use "teachings";
+@use "typograms";
+
+/* ==========================================================================
+   Custom High-Tech Theme Overrides
+   ========================================================================== */
+
+/* 1. Inter Typeface Family */
+@import url('https://rsms.me/inter/inter.css');
+
+:root {
+  --global-font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  /* 3. High-Tech Color Scheme (Light Theme): Teal & Blue */
+  --global-theme-color: #0d9488; /* high-tech teal */
+  --global-hover-color: #0284c7; /* high-tech electric blue */
+  --global-hover-text-color: #ffffff;
+  --global-code-bg-color: rgba(13, 148, 136, 0.08);
+}
+
+@supports (font-variation-settings: normal) {
+  :root {
+    --global-font-family: 'InterVariable', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'InterVariable', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+}
+
+html, body, button, input, optgroup, select, textarea, h1, h2, h3, h4, h5, h6, p, a, span, li {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+@supports (font-variation-settings: normal) {
+  html, body, button, input, optgroup, select, textarea, h1, h2, h3, h4, h5, h6, p, a, span, li {
+    font-family: 'InterVariable', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+}
+
+/* 3. High-Tech Color Scheme (Dark Theme): Neon Teal & Cyan/Blue */
+html[data-theme="dark"] {
+  --global-bg-color: #090d16; /* deep sci-fi dark space slate */
+  --global-card-bg-color: #111827; /* dark slate card */
+  --global-theme-color: #14b8a6; /* luminous high-tech teal/cyan */
+  --global-hover-color: #38bdf8; /* luminous high-tech electric blue */
+  --global-hover-text-color: #090d16;
+  --global-divider-color: #1e293b;
+  --global-code-bg-color: #1e293b;
+  --global-footer-bg-color: #0b0f19;
+  --global-footer-text-color: #94a3b8;
+  --global-footer-link-color: #38bdf8;
+}
+
+/* 2. Capitalize First Letter for Section and Tab Titles */
+.navbar-nav .nav-link,
+.navbar-brand,
+.navbar-brand.title,
+.post-header .post-title,
+.post article h2,
+.post article h2 a,
+.post article h3,
+.projects h2.category,
+.category,
+h1.category,
+h2.category,
+.publications h2,
+.news h2,
+.card-title {
+  text-transform: capitalize !important;
+}
+
+/* 4. Name Styling on Homepage: Not bolded, clean high-tech look */
+.post-header .post-title,
+.post-header .post-title span,
+.navbar-brand.title,
+.navbar-brand.title span {
+  font-weight: 500 !important;
+  letter-spacing: -0.02em;
+}
+
+/* 5. Presentations / Projects Styling */
+.projects {
+  .category-section {
+    display: block;
+    clear: both;
+    position: relative;
+    margin-bottom: 3rem;
+  }
+
+  h2.category {
+    color: var(--global-theme-color) !important;
+    border-bottom: 2px solid var(--global-divider-color) !important;
+    padding-bottom: 0.5rem !important;
+    margin-top: 2rem !important;
+    margin-bottom: 1.5rem !important;
+    text-align: left !important;
+    font-size: 1.6rem !important;
+    font-weight: 700 !important;
+    display: block;
+    width: 100%;
+  }
+
+  .card {
+    border: 1px solid var(--global-divider-color);
+    border-radius: 10px;
+    background-color: var(--global-card-bg-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+
+    .card-body {
+      padding: 1.5rem;
+    }
+
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--global-text-color);
+      line-height: 1.4;
+      margin-bottom: 0.75rem;
+    }
+
+    .card-text {
+      color: var(--global-text-color-light);
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(13, 148, 136, 0.12);
+      border-color: var(--global-theme-color);
+
+      .card-title {
+        color: var(--global-theme-color);
+      }
+    }
+  }
+}
+
+/* Publication and News High-Tech Badges and Links */
+.badge {
+  background: linear-gradient(135deg, var(--global-theme-color), var(--global-hover-color)) !important;
+  color: #ffffff !important;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.news table th {
+  color: var(--global-theme-color) !important;
+  font-weight: 600;
+}

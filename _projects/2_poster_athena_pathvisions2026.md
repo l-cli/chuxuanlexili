@@ -1,9 +1,9 @@
 ---
 layout: page
 title: "Augmented tissue histopathology evaluation and navigation assistant for digital pathology"
-description: "Poster Presentation · Pathology Visions 2026, San Diego, CA"
+description: "Poster Presentation · Pathology Visions 2026 · San Diego, CA · October 16–18, 2026"
 importance: 1
-category: posters
+category: Posters
 ---
 
 ### Presentation Details
@@ -12,7 +12,6 @@ category: posters
 - **Conference**: Pathology Visions 2026
 - **Location**: San Diego, CA
 - **Date**: October 16–18, 2026
-- **Authors**: C. Li et al.
 
 ---
 

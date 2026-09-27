@@ -1,9 +1,9 @@
 ---
 layout: page
 title: "Cellular context-specific gene regulation of neuropsychiatric disorders in single human neurons"
-description: "Poster Presentation · ASHG 2022, Los Angeles, CA"
+description: "Poster Presentation · ASHG 2022 · Los Angeles, CA · October 25–29, 2022"
 importance: 5
-category: posters
+category: Posters
 ---
 
 ### Presentation Details
@@ -12,7 +12,6 @@ category: posters
 - **Conference**: American Society of Human Genetics (ASHG) Annual Meeting
 - **Location**: Los Angeles, CA, United States
 - **Date**: October 25–29, 2022
-- **Authors**: C. Li et al.
 
 ---
 
