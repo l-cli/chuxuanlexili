@@ -27,7 +27,7 @@ latest_posts:
   <p class="hero-tagline" style="margin: 0.75rem 0; font-size: 1.05rem; line-height: 1.5;">Staying on the wavefront of AI for better medicine.</p>
 
   <div class="intro-links" style="margin: 0.5rem 0 1.25rem 0; line-height: 1.9;">
-    <div><strong>Curriculum Vitae:</strong> <a class="gradient-link" href="{{ '/assets/pdf/cv.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer">Download CV (PDF)</a></div>
+    <div><strong>Curriculum Vitae:</strong> <a class="gradient-link" href="{{ '/assets/pdf/cv.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer" style="white-space: nowrap;">Download CV (PDF)</a></div>
     <div><strong>LinkedIn:</strong> <a class="gradient-link" href="https://www.linkedin.com/in/chuxuan-li" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/chuxuan-li</a></div>
     <div><strong>GitHub:</strong> <a class="gradient-link" href="https://github.com/l-cli" target="_blank" rel="noopener noreferrer">https://github.com/l-cli</a></div>
     <div><strong>Google Scholar:</strong> <a class="gradient-link" href="https://scholar.google.com/citations?user=6FHpDjAAAAAJ" target="_blank" rel="noopener noreferrer">https://scholar.google.com/citations?user=6FHpDjAAAAAJ</a></div>
