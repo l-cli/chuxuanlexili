@@ -4,7 +4,7 @@ title: presentations
 permalink: /projects/
 description: Invited talks, conference presentations, and posters.
 nav: true
-nav_order: 3
+nav_order: 2
 display_categories: [talks, posters]
 horizontal: false
 ---
