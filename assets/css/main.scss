@@ -27,55 +27,63 @@
 @use "typograms";
 
 /* ==========================================================================
-   Custom High-Tech Theme Overrides
+   High-Tech Custom Styling: Inter Font, Teal & Blue Palette, Capitalization
    ========================================================================== */
 
-/* 1. Inter Typeface Family */
-@import url('https://rsms.me/inter/inter.css');
+/* 1. Inter Font Family (Applied globally with !important to override system/tailwind defaults) */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+@import url("https://rsms.me/inter/inter.css");
 
-:root {
-  --global-font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-
-  /* 3. High-Tech Color Scheme (Light Theme): Teal & Blue */
-  --global-theme-color: #0d9488; /* high-tech teal */
-  --global-hover-color: #0284c7; /* high-tech electric blue */
-  --global-hover-text-color: #ffffff;
-  --global-code-bg-color: rgba(13, 148, 136, 0.08);
+:root, html, body {
+  --global-font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
 }
 
-@supports (font-variation-settings: normal) {
-  :root {
-    --global-font-family: 'InterVariable', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-family: 'InterVariable', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  }
+*, *::before, *::after {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
 }
 
-html, body, button, input, optgroup, select, textarea, h1, h2, h3, h4, h5, h6, p, a, span, li {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+code, kbd, samp, pre, .highlight, .highlight * {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
 }
 
-@supports (font-variation-settings: normal) {
-  html, body, button, input, optgroup, select, textarea, h1, h2, h3, h4, h5, h6, p, a, span, li {
-    font-family: 'InterVariable', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  }
+/* 2. High-Tech Color Scheme: Teal (#0d9488) and Electric Blue (#0284c7) */
+:root, html, html[data-theme="light"] {
+  --global-theme-color: #0d9488 !important;
+  --global-hover-color: #0284c7 !important;
+  --global-hover-text-color: #ffffff !important;
+  --global-code-bg-color: rgba(13, 148, 136, 0.08) !important;
 }
 
-/* 3. High-Tech Color Scheme (Dark Theme): Neon Teal & Cyan/Blue */
 html[data-theme="dark"] {
-  --global-bg-color: #090d16; /* deep sci-fi dark space slate */
-  --global-card-bg-color: #111827; /* dark slate card */
-  --global-theme-color: #14b8a6; /* luminous high-tech teal/cyan */
-  --global-hover-color: #38bdf8; /* luminous high-tech electric blue */
-  --global-hover-text-color: #090d16;
-  --global-divider-color: #1e293b;
-  --global-code-bg-color: #1e293b;
-  --global-footer-bg-color: #0b0f19;
-  --global-footer-text-color: #94a3b8;
-  --global-footer-link-color: #38bdf8;
+  --global-bg-color: #090d16 !important;
+  --global-card-bg-color: #111827 !important;
+  --global-theme-color: #14b8a6 !important;
+  --global-hover-color: #38bdf8 !important;
+  --global-hover-text-color: #090d16 !important;
+  --global-divider-color: #1e293b !important;
+  --global-code-bg-color: #1e293b !important;
+  --global-footer-bg-color: #0b0f19 !important;
+  --global-footer-text-color: #94a3b8 !important;
+  --global-footer-link-color: #38bdf8 !important;
 }
 
-/* 2. Capitalize First Letter for Section and Tab Titles */
+/* Navigation Bar: High-Tech Top Accent & Active State */
+.navbar {
+  border-top: 3px solid #0d9488 !important;
+}
+
+.navbar-nav .nav-item.active > .nav-link {
+  color: #0d9488 !important;
+  font-weight: 600 !important;
+  border-bottom: 2px solid #0d9488 !important;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #0284c7 !important;
+}
+
+/* 3. Section and Tab Titles: First Letter Capitalized */
 .navbar-nav .nav-link,
 .navbar-brand,
 .navbar-brand.title,
@@ -93,16 +101,44 @@ h2.category,
   text-transform: capitalize !important;
 }
 
-/* 4. Name Styling on Homepage: Not bolded, clean high-tech look */
+/* Section Headings Styling (Teal & High-Tech) */
+h2, .post article h2, .post article h2 a, .projects h2.category {
+  color: #0d9488 !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.01em !important;
+}
+
+html[data-theme="dark"] h2,
+html[data-theme="dark"] .post article h2,
+html[data-theme="dark"] .post article h2 a,
+html[data-theme="dark"] .projects h2.category {
+  color: #14b8a6 !important;
+}
+
+/* 4. Name Styling on Homepage: Unbolded, Clean, and Elegant */
 .post-header .post-title,
 .post-header .post-title span,
 .navbar-brand.title,
 .navbar-brand.title span {
   font-weight: 500 !important;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.02em !important;
 }
 
-/* 5. Presentations / Projects Styling */
+/* 5. High-Tech Cards and Badges */
+.badge, .abbr .badge {
+  background: linear-gradient(135deg, #0d9488, #0284c7) !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.03em !important;
+  padding: 0.35em 0.65em !important;
+  border-radius: 6px !important;
+}
+
+.news table th {
+  color: #0d9488 !important;
+  font-weight: 600 !important;
+}
+
 .projects {
   .category-section {
     display: block;
@@ -125,52 +161,57 @@ h2.category,
   }
 
   .card {
-    border: 1px solid var(--global-divider-color);
-    border-radius: 10px;
-    background-color: var(--global-card-bg-color);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    border: 1px solid var(--global-divider-color) !important;
+    border-left: 3px solid #0d9488 !important;
+    border-radius: 8px !important;
+    background-color: var(--global-card-bg-color) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease !important;
 
     .card-body {
-      padding: 1.5rem;
+      padding: 1.5rem !important;
     }
 
     .card-title {
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: var(--global-text-color);
-      line-height: 1.4;
-      margin-bottom: 0.75rem;
+      font-size: 1.25rem !important;
+      font-weight: 600 !important;
+      color: var(--global-text-color) !important;
+      line-height: 1.4 !important;
+      margin-bottom: 0.75rem !important;
     }
 
     .card-text {
-      color: var(--global-text-color-light);
-      font-size: 0.95rem;
-      line-height: 1.5;
-      margin-bottom: 0;
+      color: var(--global-text-color-light) !important;
+      font-size: 0.95rem !important;
+      line-height: 1.5 !important;
+      margin-bottom: 0 !important;
     }
 
     &:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(13, 148, 136, 0.12);
-      border-color: var(--global-theme-color);
+      transform: translateY(-2px) !important;
+      box-shadow: 0 8px 24px rgba(13, 148, 136, 0.18) !important;
+      border-left-color: #0284c7 !important;
 
       .card-title {
-        color: var(--global-theme-color);
+        color: #0d9488 !important;
       }
     }
   }
 }
 
-/* Publication and News High-Tech Badges and Links */
-.badge {
-  background: linear-gradient(135deg, var(--global-theme-color), var(--global-hover-color)) !important;
-  color: #ffffff !important;
-  font-weight: 600;
-  letter-spacing: 0.03em;
+/* Links & Buttons */
+a {
+  transition: color 0.15s ease-in-out;
 }
 
-.news table th {
-  color: var(--global-theme-color) !important;
-  font-weight: 600;
+.btn.btn-sm {
+  border: 1px solid #0d9488 !important;
+  color: #0d9488 !important;
+  border-radius: 6px !important;
+  font-weight: 500 !important;
+
+  &:hover {
+    background: #0d9488 !important;
+    color: #ffffff !important;
+  }
 }
