@@ -408,4 +408,11 @@ a {
   border: 1px solid var(--global-divider-color, #e2e8f0);
 }
 
+/* Author Name Bolding in Publications */
+.publications .author em,
+.author em {
+  font-weight: 700 !important;
+  font-style: normal !important;
+}
+
 
