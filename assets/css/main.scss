@@ -360,11 +360,11 @@ a {
 
 /* Fallback profile photo alignment when script has not run */
 @media (min-width: 576px) {
-  .post:not(:has(#header-profile-row)) .post-header {
+  .post:has(article .profile):not(:has(#header-profile-row)) .post-header {
     width: calc(100% - 250px);
     float: left;
   }
-  .post:not(:has(#header-profile-row)) article .profile {
+  .post:has(article .profile):not(:has(#header-profile-row)) article .profile {
     float: right !important;
     width: 230px !important;
     margin-top: -5.75rem !important;
